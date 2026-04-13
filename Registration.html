@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>registration</title>
+<style>
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+border:none;
+}
+body{
+background:url(https://www.copyright.gov/registration/grnw/images/GRNW-Landing-Webpage-Image.jpg);
+background:cover;
+background-repeat:no-repeat;
+background-size:cover;
+min-height:100vh;
+}
+.main_container{
+position:absolute;
+top:20%;
+left:40%;
+min-width:400px;
+}
+div p{
+color:white;
+font-size:20px;
+margin:10px 0;
+}
+.main_container h1{
+font-size:30px;
+margin-bottom:25px;
+text-align:center;
+color:white;
+
+}
+.main_container div{
+margin:5px;
+}
+.main_container input{
+border-radius:5px;
+width:100%;
+padding:18px 15px;
+}
+button{
+padding:18px 15px;
+border-radius:5px;
+cursor:pointer;
+margin-top:15px;
+width:50%;
+font-size:15px;
+}
+button:hover{
+color:black;
+background-color:#FFFFF7;
+scale:0.9;
+
+}
+
+</style>
+</head>
+<body>
+<div class="main_container">
+<h1>REGISTRATION FORM</h1>
+<div>
+<p>Full Name:</p>
+<input type="text" id="FullName" placeholder="Enter Your Full Name">
+<p>User Name:</p>
+<input type="text" id="UserName"placeholder="Enter Your Name">
+<p>Email:</p>
+<input type="email" id="Email" placeholder="Enter Your Email">
+<p>Password:</p>
+<input type="password" id="Password" placeholder="Enter Your Password"><br>
+<button type="button" onclick="login()">Registration</button>
+<p id="error" style="color: red; display: none;">Invalid credentials. Redirecting...</p>
+</div>
+</div>
+
+<script>
+function login(){
+
+ const fullName=document.getElementById("FullName").value;
+ const userName=document.getElementById("UserName").value;
+ const email=document.getElementById("Email").value;
+ const password=document.getElementById("Password").value;
+
+const correctFullName="Anusha_Reddy";
+ const correctUserName="Reddy_47";
+const correctEmail="Anushareddy_47@gmail.com";
+ const correctPassword="123456";
+
+ if(fullName===correctFullName   &&  userName===correctUserName  && email===correctEmail  && password===correctPassword){
+window.location.href="login.html";
+}else{
+document.getElementById("error").style.display="block";
+setTimeout(() => {
+          window.location.href = "another-project/index.html";      
+        }, 2000);
+      }
+    }
+
+</script>
+</body>
+</html>
